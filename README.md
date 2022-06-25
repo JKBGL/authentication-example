@@ -1,34 +1,41 @@
-## Simple Authentication Example
-This small project is the aftermath of an 8 hour speed coding session, and it's code is complete ass but I love it.
+# Simple JWT Authentication Example
+This small project is the aftermath of an 8 hour speed coding session, and the result is complete ass but I love it.
 
 ---
 
 ## Screenshots
 - Main page (Desktop)
-[image mini-application]
+
+![mini-application](./repo-images/mini-application.png?raw=true)
 
 - Dashboard (Desktop)
-[image mini-application-dashboard]
+
+
+![mini-application-dashboard](./repo-images/mini-application-dashboard.png?raw=true)
 
 - Main page (Mobile)
-[image mini-application-mobile]
+
+
+![mini-application-mobile](./repo-images/mini-applcation-mobile.png?raw=true)
 
 - Dashboard (Mobile)
-[image mini-application-dashboard-mobile]
+
+
+![mini-application-dashboard-mobile](./repo-images/mini-application-dashboard-mobile.png?raw=true)
 
 ---
 
 ## Installation
+
+### Requirements
+- Python 3.10+
+- MySQL 8
 
 ### Cloning
 ```bash
 > git clone https://github.com/JKBGL/auth-example
 > cd auth-example
 ```
-
-### Requirements
-- Python 3.10+
-- MySQL 8
 
 ### Installing python packages
 ```bash
@@ -62,5 +69,5 @@ There are two ways of running this application:
 
 ---
 
-License : `Mozilla Public License 2.0`
+License : Mozilla Public License 2.0<br>
 Author : Jakatebel
