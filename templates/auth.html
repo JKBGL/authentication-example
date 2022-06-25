@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ globals.APP_NAME }} - Login</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="{{ globals.APP_DESC }}">
+        <meta name="keywords" content="application, name, express, design, discover, style, redefine, jkbgl, ...">
+        <link rel="icon" type="image/png" href="/static/logo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <section class="content">
+            <div class="container left">
+                <video src="/static/ID_3831869.mp4" class="stock-footage" autoplay playsinline muted loop></video>
+                <div class="container-content">
+                    <img class="app-logo" src="/static/logo.png">
+                    <h1 class="app-title">{{ globals.APP_NAME }}</h1>
+                    <p class="app-desc">{{ globals.APP_DESC }}</p>
+                </div>
+                <footer class="app-statement">
+                    &copy; 2022 <a href="https://jkbgl.net/">JKBGL.NET</a> CCLT 0 - Credit contribution<br>
+                    Stock video by cottonbro @ <a href="https://www.pexels.com/video/tagging-pictures-on-the-mood-board-on-its-essence-3831869/">pexels.com</a>
+                </footer>
+            </div>
+            <div class="container right">
+                <div class="container-content">
+                    <h1>Login</h1>
+                    <form class="nigg" action="/auth/login" method="post">
+                        <div class="row">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" class="in-field" placeholder="email@example.com">
+                        </div>
+                        <div class="row">
+                            <label for="password">Passowrd</label>
+                            <input type="password" name="password" class="in-field" placeholder="•••">
+                        </div>
+                        <p class="small">Don't have an account? <a href="/auth/register">Register here</a></p>
+
+                        <button class="submit" type="submit">Log In</button>
+                        {% if flash %}
+                        <p class="notification {% if flash_type != 'success' %}red{% endif %}">{{ flash }}</p>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="app-statement bottom">
+            &copy; 2022 <a href="https://jkbgl.net/">JKBGL.NET</a> CCLT 0 - Credit contribution<br>
+            Stock video by cottonbro @ <a href="https://www.pexels.com/video/tagging-pictures-on-the-mood-board-on-its-essence-3831869/">pexels.com</a>
+        </footer>
+    </body>
+</html>

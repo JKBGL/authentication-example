@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ globals.APP_NAME }} - Dashboard</title>
+        <meta charset="UTF-8">
+        <meta viewport="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <section class="dashboard">
+            <h1 class="header"><span>Welcome {{ data["first_name"] }}!</span><span><a href="/auth/logout">Logout</a></span></h1>
+            <hr class="separator">
+            {% if flash %}
+            <p class="notification {% if flash_type != 'success' %}red{% endif %}">
+                <span>{{ flash }}</span>
+                <a onclick="this.parentElement.remove();">Close</a>
+            </p>
+            {% endif %}
+            <div class="dashboard-container nigg">
+                <form action="/settings/profile" method="post" class="sub-container">
+                    <h2 class="header">Profile</h2>
+                    <div class="row">
+                        <label for="new_first_name">First Name</label>
+                        <input type="text" name="new_first_name" class="in-field" placeholder="John" value="{{ data['first_name'] }}" autocomplete="off">
+                    </div>
+                    <div class="row">
+                        <label for="new_last_name">Last Name</label>
+                        <input type="text" name="new_last_name" class="in-field" placeholder="Doe" value="{{ data['last_name'] }}" autocomplete="off">
+                    </div>
+                    <div class="row">
+                        <label for="new_email">Email</label>
+                        <input type="text" name="new_email" class="in-field" placeholder="email@example.com" value="{{ data['email'] }}" autocomplete="off">
+                    </div>
+                    <button class="submit" type="submit">Save</button><br>
+                    <p>Registered since: {{ data["registered_since"] }}</p>
+                    <p>Last login: {{ data["last_login"] }}</p>
+                </form>
+                <form action="/settings/password" method="post" class="sub-container">
+                    <h2 class="header">Password</h2>
+                    <div class="row">
+                        <label for="password_old">Old Password</label>
+                        <input type="password" name="password_old" class="in-field" placeholder="•••" autocomplete="off">
+                    </div>
+                    <div class="row">
+                        <label for="password">New Password</label>
+                        <input type="password" name="password" class="in-field" placeholder="•••" autocomplete="off">
+                    </div>
+                    <div class="row">
+                        <label for="password_confirm">Confirm New Password</label>
+                        <input type="password" name="password_confirm" class="in-field" placeholder="•••" autocomplete="off">
+                    </div>
+                    <button class="submit" type="submit">Save</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
